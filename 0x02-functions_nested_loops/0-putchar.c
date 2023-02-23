@@ -1,20 +1,19 @@
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 /**
- * main - main function
- * -putchar: print the alphabet of -putchar.
- *  Return: Success 0
+ * main -main function
+ * _putchar: Print the word _putchar using its alphabet letters
+ * Return Always 0
  */
 int main(void)
 {
-	-putchar('-');
-	-putchar('p');
-	-putchar('u');
-	-putchar('t');
-	-putchar('c');
-	-putchar('h');
-	-putchar('a');
-	-putchar('r');
-	-putchar('\n');
+	_putchar('-');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
 	return (0);
 }
