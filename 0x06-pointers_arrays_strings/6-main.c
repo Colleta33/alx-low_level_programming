@@ -8,13 +8,12 @@
  */
 int main(void)
 {
-	char str[] = "Expect the best. Prepare for the worst.
-		Capitalize on what comes.\n
-		hello world! hello-world 0123456hello world\thello world.hello world\n";
-	char *ptr;
+	char str[] = "Expect the best.Prepare for the worst. Capitalize on what comes.
+		Hello world! Hello-world 0123456hello world Hello world.Hello world";
+	char *str;
 
-	ptr = cap_string(str);
-	printf("%s", ptr);
-	printf("%s", str);
+	str = cap_string(str);
+	printf("%s", char);
+	printf("%s", char);
 	return (0);
 }
