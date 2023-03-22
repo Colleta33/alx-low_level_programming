@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	bytes = atoi(argv[i]);
+	bytes = atoi(argv[1]);
 
 	if (bytes < 0)
 	{
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			printf("%02hhx\n", arr[i]);
 			break;
 		}
-	printf("%02hhx", arr[i]);
+		printf("%02hhx", arr[i]);
 	}
 	return (0);
 }
