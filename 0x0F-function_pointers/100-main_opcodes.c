@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  *main - prints its own opcodes
  *@argc: number of arguments
  *@argv: array of arguments
  *
- *Return: 0 (success)
+ *Return: Always 0 (success)
  */
 int main(int argc, char *argv[])
 {
@@ -35,7 +36,7 @@ int main(int argc, char *argv[])
 			printf("%02hhx\n", arr[i]);
 			break;
 		}
-		printf("%02hhx", arr[i]);
+		printf("%02hhx ", arr[i]);
 	}
 	return (0);
 }
