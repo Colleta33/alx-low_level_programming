@@ -5,34 +5,40 @@
  *@filename: apointer to  the file to be created
  *@text_content: a pointer to the text in the file
  *Return: 1 on success, -1 on failure
+ *
  */
 int create_file(const char *filename, char *text_content)
 {
-	int o;
-	int nletters;
-	int w;
-
-	if (!filename)
+	if (filename == NULL)
+	{ /* check if filename is NULL */
 		return (-1);
-
-	o = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0660);
-
-	if (o == -1)
-		return (-1);
-
-	if (text_content)
-		text_content = "";
-	{
-		for (nletters = 0; text_content[nletters];)
-			nletters++;
 	}
 
-	w = write(o, text_content, nletters);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	/* open file with write-only, create if not exists, truncate if exists */
+	/* set permissions to rw------- */
 
-	if (w == -1)
+	if (fd == -1)
+	{ /* check if file could not be opened or created*/
 		return (-1);
+	}
 
-	close(o);
+	if (text_content != NULL)
+	{ /* if text_content is not NULL */
+		int i = 0;
 
+		while (text_content[i] != '\0')
+		{ /* loop through each character until NULL termination
+		*/
+			i++;
+		}
+
+		if (write(fd, text_content, i) == -1)
+		{ /* write text_content to file */
+			return (-1);
+		}
+	}
+
+	close(fd); /* close file */
 	return (1);
 }
