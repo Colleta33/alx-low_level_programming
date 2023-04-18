@@ -9,26 +9,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int num_bits = 0;
-
-	while (n)
+	if (n > 1)
 	{
-		unsigned long int temp = n;
-		temp >>= 1;
-		num_bits++;
+		print_binary(n >> 1);
 	}
-
-	while (num_bits)
-	{
-		unsigned int i = num_bits;
-	       	i--;
-	}
-	if ((n >> (num_bits - 1)) & 1)
-	{
-		_putchar('1');
-	}
-	else
-	{
-		_putchar('0');
-	}
+	_putchar((n & 1) ? '1' : '0');
 }
