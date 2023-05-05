@@ -2,21 +2,14 @@
 #include <stdio.h>
 
 /**
- * get_endianness - checks the size of the machine
+ * get_endianness - checks the endianness.
  * Return: 0 for big, 1 for little
  */
 int get_endianness(void)
 {
 	int num = 1;
 
-	char* ptr = (char*)&num;
+	char *endian_ptr = (char *)&num;
 
-	if (*ptr == 1)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (*endian_ptr == 1);
 }
