@@ -12,11 +12,11 @@ int main(int argc, char *argv[])
     char *password = "Hol";
     if (strcmp(argv[1], password) == 0)
     {
-        printf("Congratulations!");
+        printf("Congratulations!\n");
         return 0;
     } else 
     {
-        printf("Incorrect password");
+        printf("Incorrect passwordi\n");
         return 1;
     }
 }
