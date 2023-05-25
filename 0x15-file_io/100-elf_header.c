@@ -4,7 +4,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
-void print_error(const char *msg) {
+void print_error(const char *msg)
+{
+	Elf64_Ehdr ehdr;
+	int fd = open(argv[1], O_RDONLY);
 fprintf(stderr, "%s\n", msg);
 exit(98);
 }
@@ -12,11 +15,10 @@ int main(int argc, char *argv[]) {
 if (argc != 2) {
 print_error("Usage: elf_header elf_filename");
 }
-int fd = open(argv[1], O_RDONLY);
+
 if (fd == -1) {
 print_error("Failed to open file");
 }
-Elf64_Ehdr ehdr;
 if (read(fd, &ehdr, sizeof(ehdr)) != sizeof(ehdr)) {
 print_error("Failed to read ELF header");
 }
